@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +7,307 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: whitesmoke; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(190, 183, 183, 0.485);
+}
+.logo{
+  width: 120px;
+  height: 100px;
+  margin-top: 10px;
+  
+}
+.antique{
+  display: flex;
+  margin-left: 50px;
+}
+a{
+  text-decoration: none;
+}
+.logoName>h1{
+  font-size: 50px;
+  font-weight: normal;
+  color: rgb(255, 123, 0);
+  margin-top: 50px;
+  margin-left: 10px;
+}
+.logoName>h1>span{
+  font-size: 30px;
+  font-family: Roboto;
+  color: rgb(255, 123, 0);
+}
+
+.alink {
+  display: inline-block;
+  position: relative;
+  color: gray;
+  text-decoration: none;
+}
+
+.alink:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 123, 0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.alink:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.alink:active{
+  color: rgb(255, 123, 0) ;
+}
+
+.largetxt{
+  position: absolute;
+  background-color: rgba(190, 183, 183, 0.485);
+  width: 100%;
+  font-size: 100px;
+  font-weight: bold;
+  color: rgba(152, 147, 143, 0.661);
+  
+}
+.largetxt>p{
+  margin-top: 100px;
+  margin-left: 350px;
+  padding-top: 50px;
+  padding-bottom: 82px;
+  opacity: 0.8;
+  letter-spacing: 5px;
+}
+.smalltxt{
+  position:relative;
+  display: flex;
+  bottom: 40px;
+  
+}
+.smalltxt>p{
+  position:relative;
+  top: 400px;
+  height: 20vh;
+  font-size: 20px;
+  font-style: italic;
+  font-family: cursive;
+  letter-spacing: 2px;
+}
+
+.sect2border{
+  height: 97vh;
+}
+.sect2border>p{
+  position: absolute;
+  left: 250px;
+  border: solid rgb(255, 123, 0)  3px;
+  padding-left: 10px;
+  padding-top: 300px;
+  padding-bottom: 100px;
+  width: 50%;
+  font-size: 20px;
+  font-style: italic;
+  font-family: cursive;
+  letter-spacing: 2px;
+  line-height: 150%;
+  font-family: cursive;
+  font-style: italic;
+}
+.sect2border>p>button{
+  cursor: pointer;
+  font-size: 17px;
+  border: none;
+  background-color: white;
+  color: rgb(255, 123, 0) ;
+  font-family: cursive;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.sect2border>p>button:hover{
+  color: black;
+
+}
+.sect2border>h1{
+  width: 50%;
+  position: relative;
+  top: 50px;
+  left: 70px;
+  letter-spacing: 5px;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgb(85, 81, 81);
+
+}
+
+.sect2border>img{
+  position: relative;
+ top: -375px;
+  left: 705px;
+}
+.sect3{
+  background-color: rgba(133, 130, 130, 0.696);
+}
+.trainers{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.trainers>img{
+  padding: 40px;
+  height: 400px;
+  width: 300px;
+}
+
+/* .login{
+  background-color: rgba(255, 123, 0, 0.901);
+  padding-top: 50px;
+  padding-left: 300px;
+}
+
+.login>form{
+  width: 50%;
+  margin: auto;
+}
+.login>form>label{
+  color: red;
+  margin: 80px;
+}
+.login>form>input{
+  color: red;
+  margin: 30px;
+} */
+
+.signUp{
+    display: flex; 
+    margin: 50px;
+    margin-left: 200px;
+    
+    
+}
+.superShopper{
+    /* width: 40%; */
+    /* height: 56vh; */
+    border-radius: 20px;
+}
+.superShopper>img{
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.userSignUp{
+    width: 40%;
+    background-image: linear-gradient(to right, rgba(242, 234, 234, 0.681), rgba(246, 121, 3, 0.907));
+    margin-left: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+.userSignUp>h2{
+    font-size: 50px;
+    padding-left: 75px;
+    opacity: 1;
+    font-family: 'Henny Penny', cursive;
+}
+.userSignUp>form{
+    padding-left: 75px;
+   font-size: 25px;
+   font-family: 'Gugi', cursive;
+}
+#welcomebtn{
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    float: right;
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    background-color: rgba(246, 243, 240, 0.982);
+    font-family: 'Water Brush', cursive;
+
+}
+#welcomebtn:hover {
+  background-color: rgb(255, 123, 0);
+
+}
+
+
+
+
+
+.userSignUp>h1{
+  font-size: 70px;
+  font-weight: normal;
+  color: rgb(255, 123, 0);
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.userSignUp>h1>span{
+  font-size: 30px;
+  font-family: Roboto;
+  color: rgb(255, 123, 0);
+}
+.invalidUsernamefalse{
+  display: none;
+  
+}
+
+.invalidUsername{
+  font-size: 15px;
+  color: red;
+}
+
+.form1>input{
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 20px;
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  background-color: rgba(240, 237, 232, 0.874);
+}
+.userSignUp>h4>small{
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.userSignUp>h4>button{
+  cursor: pointer;
+   margin-left: 50px;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+.userSignUp>h4>button:after {
+  content: '';
+  position: absolute;
+  width: 4%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 19.5%;
+  left: 55%;
+  background-color: rgb(255, 123, 0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.userSignUp>h4>button:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
