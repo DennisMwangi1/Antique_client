@@ -3,24 +3,40 @@ import Navbar from './Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Login from "./Login";
+import About from "./About";
 
 function App() {
+  const[currentUser,setCurrentUser]=useState({})
   const [users, setUsers] = useState([]);
   const [LogUser, setLogUser] = useState('');
   const [Logpwd, setLogpwd] = useState('');
   const [success, setSuccess] = useState(false)
   const [logged, setLogged] = useState(true)
   
+  
+  // localStorage.clear()
   useEffect(() => { 
     fetch("http://localhost:9292/users")
       .then((res) => res.json())
       .then((users) => {
         setUsers(users)
-        // setSuccess(true)
       })
   }, []);
+  useEffect(() => {
+    const data = window.localStorage.getItem('ANTIQUE_APP')
+    const user = window.localStorage.getItem('ANTIQUE_USER')
+    if (data !== null  ) {
+      setSuccess(JSON.parse(data))
+      setCurrentUser(JSON.parse(user))
+    }
+  },[])
+  useEffect(() => {
+    window.localStorage.setItem('ANTIQUE_APP', JSON.stringify(success))
+    window.localStorage.setItem('ANTIQUE_USER', JSON.stringify(currentUser))
+    
+  },[success,currentUser])
 
-  // console.log(users)
+
 
   function handleUser(e) {
     setLogUser(e.target.value)
@@ -31,42 +47,44 @@ function App() {
   }
 
   function handleSubmit(e) {
-    let successful = []
     e.preventDefault();
     users.filter((user) => {
       if (user.user_name === LogUser && user.password === Logpwd) {
-        successful.push(user)
-        return true
+        setCurrentUser(user)
+        setSuccess(true)
+        
       } else {
-        return false
-      }
-    })
-    if (successful.length > 0){
-      setSuccess(true)
-    }else{
-      // alert("Invalid username or password")
-      setLogged(false)
+          setLogged(false)
       setLogUser('')
       setLogpwd('')
       e.target.reset()
-    }
+      }
+      return true
+    })
   }
+
 
 
   return (
 
-   success? <div className='a'>
+    success?
+      <div className='a'>
       <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home/>} />
+            <Route path='/' exact element={<Home currentUser={currentUser } />} />
+          <Route path="/about" element={<About/>}/>
       </Routes>
       </BrowserRouter>
-    </div> : <Login
+      </div>
+      :
+      <Login
         handleSubmit={handleSubmit}
         handleUser={handleUser}
         handlePwd={handlePwd}
         logged={logged}
+        setSuccess={setSuccess}
+        setCurrentUser={setCurrentUser}
       />
   );
 }

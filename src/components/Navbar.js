@@ -21,20 +21,26 @@ function Navbar() {
         bordeRadius:"10px",
         
         
-      }
+    }
+  
+  function logOut() {
+    localStorage.clear()
+    window.location.reload()
+  }
 
   return (
     <div className='nav'>
         <div className='antique'>
              <img src={logo} alt='logo' className='logo' />
-        <NavLink to='/'> <a className='logoName' href='/'><h1>A<span>NTIQUE</span></h1></a></NavLink>
+         <span className='logoName' href=''><h1>A<span>NTIQUE</span></h1></span>
         </div>
         <div className='navlinks'>
-        <NavLink style={linkStyles}  to='/' ><a href='/' className='alink' >HOME</a></NavLink>
-         <NavLink style={linkStyles} to='./about'><a href='/' className='alink'>ABOUT</a></NavLink>
-         <NavLink style={linkStyles} to='./workouts'><a href='/' className='alink'>WORKOUTS</a></NavLink>
-         <NavLink style={linkStyles} to='./trainers'><a href='/' className='alink'>TRAINERS</a> </NavLink>
-         <NavLink style={linkStyles} to='./contacts'><a href='/' className='alink'>CONTACTS</a></NavLink>
+        <NavLink style={linkStyles}  to='/' className="anav">HOME</NavLink>
+         <NavLink style={linkStyles} to='/about'>ABOUT</NavLink>
+         <NavLink style={linkStyles} to='/workouts'>WORKOUTS</NavLink>
+         <NavLink style={linkStyles} to='/trainers'>TRAINERS</NavLink>
+        <NavLink style={linkStyles} to='/profile'>PROFILE</NavLink>
+        <button onClick={logOut} style={linkStyles}>Logout</button>
         </div>
          
          
