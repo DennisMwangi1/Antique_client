@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Login from "./Login";
 import About from "./About";
+import WorkoutContainer from "./WorkoutContainer";
 
 function App() {
   const[currentUser,setCurrentUser]=useState({})
@@ -73,7 +74,8 @@ function App() {
       <Navbar />
       <Routes>
             <Route path='/' exact element={<Home currentUser={currentUser } />} />
-          <Route path="/about" element={<About/>}/>
+            <Route path="/about" element={<About />} />
+            <Route path="/workouts" element={<WorkoutContainer currentUser={currentUser } />}/>
       </Routes>
       </BrowserRouter>
       </div>

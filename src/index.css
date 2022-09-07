@@ -486,3 +486,31 @@ a{
   display: flex;
   justify-content: space-around;
 }
+
+fieldset{
+  margin: 30px;
+  margin-bottom: 100px;
+  padding: 10px;
+  border: 3px dashed rgb(238, 115, 0) ;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+legend{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 40px;
+  font-family: cursive;
+  letter-spacing: 2.5px;
+}
+
+.workoutvideo{
+   background-color: rgba(231, 229, 229, 0.485);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
