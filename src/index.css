@@ -161,16 +161,7 @@ a{
   left: 705px;
 }
 
-.trainers{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.trainers>img{
-  padding: 40px;
-  height: 400px;
-  width: 300px;
-}
+
 
 
 
@@ -514,3 +505,73 @@ legend{
   text-align: center;
   border-radius: 10px;
 }
+
+.userinfo{
+  text-align: center;
+  /* background-color: red; */
+  width: 100%;
+}
+.userinfo>h3{
+  line-height: 120%;
+}
+.userinfo>h3>span{
+  color: rgb(238, 115, 0) ;
+  font-family: cursive;
+}
+
+.trainerssection>legend{
+  font-size: 50px;
+   
+}
+.trainers{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.trainer>img{
+  height: 350px;
+  width: 250px;
+  border-radius: 20px;
+}
+.trainer{
+  height: fit-content;
+  background-color: rgba(231, 229, 229, 0.485);
+  padding: 20px;
+  margin-bottom: 20px;
+  /* margin-right: 50px; */
+  /* margin-left: 50px; */
+  /* text-align: center; */
+  border-radius: 10px;
+}
+.trainer>h3>em{
+  color: rgb(238, 115, 0) ;
+}
+.trainer>button{
+  border: 0.5px solid black;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+
+.trainer>button:hover{
+  /* border: 0.5px solid black; */
+  color: white;
+   background-color: rgb(238, 115, 0) ;
+}
+
+.sessionform{
+  margin: 20px;
+  /* padding: 10px; */
+}
+.sessionform>input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.disabled{
+  background-color: rgb(238, 115, 0) ;
+  pointer-events: none;
+}
+

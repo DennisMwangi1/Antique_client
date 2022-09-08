@@ -2,21 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Workout from './Workout'
 import { FaFacebookMessenger, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
-function WorkoutContainer({currentUser}) {
-  const [workouts, setWorkouts] = useState([])
+function WorkoutContainer({currentUser,workouts}) {
   const [loaded,setLoaded] =useState(false)
   useEffect(() => {
-      fetch("http://localhost:9292/workouts")
-    .then((res) => res.json())
-        .then((data) => {
-          setWorkouts(data)
-          let timer1 = setTimeout(() => setLoaded(true), 2000)
+   let timer1 = setTimeout(() => setLoaded(true), 2000)
 
         return () => {
             clearTimeout(timer1)
         }
-        })
-    },[])
+        
+},[])
+ 
   
   return (
     

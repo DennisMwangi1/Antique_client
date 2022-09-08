@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState} from 'react'
 
 function Workout({workout,currentUser}) {
     const [liked, setLiked] = useState(false)
@@ -12,8 +12,7 @@ function Workout({workout,currentUser}) {
                 user_id:currentUser.id
             })
         })
-        // .then(console.log('hello'))
-        // fetch(`http://localhost:9292/workouts/${id}`)
+       
        
     }
     
@@ -23,6 +22,7 @@ function Workout({workout,currentUser}) {
             <iframe width="400" height="200" src={workout.source} title={workout.id}></iframe>
             <h3>Workout by {workout.creator }</h3>
             <p>Time: {workout.time} minutes</p>
+      
             <p>Intensity: {workout.intensity} out of 10</p>
             <button onClick={() => {
                 addLiked(workout.id)

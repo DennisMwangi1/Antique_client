@@ -5,6 +5,8 @@ import Home from './Home';
 import Login from "./Login";
 import About from "./About";
 import WorkoutContainer from "./WorkoutContainer";
+import Profile from "./Profile";
+import Trainers from "./Trainers";
 
 function App() {
   const[currentUser,setCurrentUser]=useState({})
@@ -13,9 +15,9 @@ function App() {
   const [Logpwd, setLogpwd] = useState('');
   const [success, setSuccess] = useState(false)
   const [logged, setLogged] = useState(true)
+  const [workouts, setWorkouts] = useState([])
   
   
-  // localStorage.clear()
   useEffect(() => { 
     fetch("http://localhost:9292/users")
       .then((res) => res.json())
@@ -23,6 +25,8 @@ function App() {
         setUsers(users)
       })
   }, []);
+
+
   useEffect(() => {
     const data = window.localStorage.getItem('ANTIQUE_APP')
     const user = window.localStorage.getItem('ANTIQUE_USER')
@@ -37,6 +41,14 @@ function App() {
     
   },[success,currentUser])
 
+   useEffect(() => {
+      fetch("http://localhost:9292/workouts")
+    .then((res) => res.json())
+        .then((data) => {setWorkouts(data)})
+   }, [])
+  
+  
+ 
 
 
   function handleUser(e) {
@@ -75,7 +87,9 @@ function App() {
       <Routes>
             <Route path='/' exact element={<Home currentUser={currentUser } />} />
             <Route path="/about" element={<About />} />
-            <Route path="/workouts" element={<WorkoutContainer currentUser={currentUser } />}/>
+            <Route path="/workouts" element={<WorkoutContainer currentUser={currentUser} workouts={workouts} />} />
+            <Route path="/trainers" element={<Trainers currentUser={currentUser } />}/>
+            <Route path="/profile" element={<Profile currentUser={currentUser} workouts={workouts } />}/>
       </Routes>
       </BrowserRouter>
       </div>
