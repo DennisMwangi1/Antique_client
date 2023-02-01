@@ -61,7 +61,9 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setSuccess(true)
     users.filter((user) => {
+      
       if (user.user_name === LogUser && user.password === Logpwd) {
         setCurrentUser(user)
         setSuccess(true)
