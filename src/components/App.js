@@ -13,7 +13,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [LogUser, setLogUser] = useState('');
   const [Logpwd, setLogpwd] = useState('');
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(true)
   const [logged, setLogged] = useState(true)
   const [workouts, setWorkouts] = useState([])
   
